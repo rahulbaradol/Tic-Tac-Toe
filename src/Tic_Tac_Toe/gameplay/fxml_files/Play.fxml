@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
-
+<?import javafx.scene.text.Font?>
 
 <StackPane fx:id="play" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.gameplay.java_cts.Play">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label layoutX="180.0" layoutY="132.0" text="Label" />
+            <Separator layoutX="112.0" layoutY="248.0" prefHeight="3.0" prefWidth="381.0" />
+            <Label layoutX="236.0" layoutY="14.0" text="Tic Tac Toe" underline="true">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <GridPane layoutX="108.0" layoutY="76.0" prefHeight="254.0" prefWidth="381.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="pos1" alignment="CENTER" onMouseClicked="#p1Click" prefHeight="90.0" prefWidth="136.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos2" alignment="CENTER" onMouseClicked="#p2Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos3" alignment="CENTER" onMouseClicked="#p3Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos4" alignment="CENTER" onMouseClicked="#p4Click" prefHeight="90.0" prefWidth="136.0" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos5" alignment="CENTER" onMouseClicked="#p5Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos6" alignment="CENTER" onMouseClicked="#p6Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos7" alignment="CENTER" onMouseClicked="#p7Click" prefHeight="90.0" prefWidth="136.0" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos8" alignment="CENTER" onMouseClicked="#p8Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pos9" alignment="CENTER" onMouseClicked="#p9Click" prefHeight="90.0" prefWidth="136.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Separator layoutX="112.0" layoutY="158.0" prefHeight="0.0" prefWidth="381.0" />
+            <Separator layoutX="358.0" layoutY="77.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="6.0" />
+            <Separator layoutX="233.0" layoutY="77.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="0.0" />
          </children>
       </AnchorPane>
    </children>
