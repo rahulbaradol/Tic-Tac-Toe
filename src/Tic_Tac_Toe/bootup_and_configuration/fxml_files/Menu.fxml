@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="menu" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.bootup_and_configuration.java_cts.Menu">
+   <children>
+      <AnchorPane onKeyPressed="#keyBoardFunctioning" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="161.0" layoutY="14.0" text="Welcome To Tic Tac Toe" underline="true">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <JFXButton layoutX="204.0" layoutY="157.0" onAction="#play" prefHeight="86.0" prefWidth="193.0" text="Play!">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="about" layoutX="545.0" layoutY="18.0" onAction="#about" prefHeight="30.0" prefWidth="41.0" text="?" />
+            <JFXButton layoutX="14.0" layoutY="18.0" onAction="#exit" prefHeight="30.0" prefWidth="41.0" text="E" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

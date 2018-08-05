@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="welcome" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.bootup_and_configuration.java_cts.Welcome">
+   <children>
+      <AnchorPane onMouseClicked="#proceed" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="217.0" layoutY="14.0" text="Tic Tac Toe" underline="true">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="clickDescription" layoutX="234.0" layoutY="187.0" text="Click to continue">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
