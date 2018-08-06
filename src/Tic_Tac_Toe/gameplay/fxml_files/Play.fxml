@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -90,6 +91,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <JFXButton layoutX="553.0" layoutY="16.0" onAction="#reset" prefHeight="35.0" prefWidth="33.0" text="R" />
          </children>
       </AnchorPane>
    </children>
