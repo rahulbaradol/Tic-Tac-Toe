@@ -124,10 +124,6 @@ public class Play implements Initializable {
         }
     }
 
-    private void matchStarted_And_MatchEnded(String matchDes) {
-
-    }
-
     // Prints the letter in the board based on the position
     public void p1Click() {
         if (!p1) {
