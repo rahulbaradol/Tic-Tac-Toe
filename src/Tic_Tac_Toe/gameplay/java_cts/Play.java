@@ -58,6 +58,7 @@ public class Play implements Initializable {
     // Says whose turn it is
     private void setTurn(String whoseTurn) {
         turn.setText("Turn -> " + whoseTurn);
+        matchDescriptor("match started", null);
     }
 
     private void matchWon() {
@@ -121,6 +122,8 @@ public class Play implements Initializable {
                 pane.setDisable(true);
                 matchDescription.setText("Match Description -> Finished! Winner is " + whoWon + "!");
             }
+        } else if (what.equals("match started")) {
+            matchDescription.setText("Match Description -> Match is going on...");
         }
     }
 
