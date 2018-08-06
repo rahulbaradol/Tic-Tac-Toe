@@ -152,62 +152,77 @@ public class Play implements Initializable {
 
     // Shows who is the winner
     private void showWinner_Outline(String whatToDisable) {
-        if (whatToDisable.equals("horizontal upper")) {
-            pos4.setDisable(true);
-            pos5.setDisable(true);
-            pos6.setDisable(true);
-            pos7.setDisable(true);
-            pos8.setDisable(true);
-            pos9.setDisable(true);
-        } else if (whatToDisable.equals("horizontal lower")) {
-            pos1.setDisable(true);
-            pos2.setDisable(true);
-            pos3.setDisable(true);
-            pos4.setDisable(true);
-            pos5.setDisable(true);
-            pos6.setDisable(true);
-        } else if (whatToDisable.equals("vertical right")) {
-            pos1.setDisable(true);
-            pos2.setDisable(true);
-            pos4.setDisable(true);
-            pos5.setDisable(true);
-            pos7.setDisable(true);
-            pos8.setDisable(true);
-        } else if (whatToDisable.equals("vertical left")) {
-            pos2.setDisable(true);
-            pos3.setDisable(true);
-            pos5.setDisable(true);
-            pos6.setDisable(true);
-            pos8.setDisable(true);
-            pos9.setDisable(true);
-        } else if (whatToDisable.equals("horizontal center")) {
-            pos1.setDisable(true);
-            pos2.setDisable(true);
-            pos3.setDisable(true);
-            pos7.setDisable(true);
-            pos8.setDisable(true);
-            pos9.setDisable(true);
-        } else if (whatToDisable.equals("vertical center")) {
-            pos1.setDisable(true);
-            pos3.setDisable(true);
-            pos4.setDisable(true);
-            pos6.setDisable(true);
-            pos7.setDisable(true);
-            pos9.setDisable(true);
-        } else if (whatToDisable.equals("diagonal left")) {
-            pos1.setDisable(true);
-            pos2.setDisable(true);
-            pos4.setDisable(true);
-            pos6.setDisable(true);
-            pos8.setDisable(true);
-            pos9.setDisable(true);
-        } else if (whatToDisable.equals("diagonal right")) {
-            pos2.setDisable(true);
-            pos3.setDisable(true);
-            pos4.setDisable(true);
-            pos6.setDisable(true);
-            pos7.setDisable(true);
-            pos8.setDisable(true);
+        switch (whatToDisable) {
+            case "horizontal upper":
+                pos4.setDisable(true);
+                pos5.setDisable(true);
+                pos6.setDisable(true);
+                pos7.setDisable(true);
+                pos8.setDisable(true);
+                pos9.setDisable(true);
+                break;
+
+            case "horizontal lower":
+                pos1.setDisable(true);
+                pos2.setDisable(true);
+                pos3.setDisable(true);
+                pos4.setDisable(true);
+                pos5.setDisable(true);
+                pos6.setDisable(true);
+                break;
+
+            case "vertical right":
+                pos1.setDisable(true);
+                pos2.setDisable(true);
+                pos4.setDisable(true);
+                pos5.setDisable(true);
+                pos7.setDisable(true);
+                pos8.setDisable(true);
+                break;
+
+            case "vertical left":
+                pos2.setDisable(true);
+                pos3.setDisable(true);
+                pos5.setDisable(true);
+                pos6.setDisable(true);
+                pos8.setDisable(true);
+                pos9.setDisable(true);
+                break;
+            case "horizontal center":
+                pos1.setDisable(true);
+                pos2.setDisable(true);
+                pos3.setDisable(true);
+                pos7.setDisable(true);
+                pos8.setDisable(true);
+                pos9.setDisable(true);
+                break;
+
+            case "vertical center":
+                pos1.setDisable(true);
+                pos3.setDisable(true);
+                pos4.setDisable(true);
+                pos6.setDisable(true);
+                pos7.setDisable(true);
+                pos9.setDisable(true);
+                break;
+
+            case "diagonal left":
+                pos1.setDisable(true);
+                pos2.setDisable(true);
+                pos4.setDisable(true);
+                pos6.setDisable(true);
+                pos8.setDisable(true);
+                pos9.setDisable(true);
+                break;
+
+            case "diagonal right":
+                pos2.setDisable(true);
+                pos3.setDisable(true);
+                pos4.setDisable(true);
+                pos6.setDisable(true);
+                pos7.setDisable(true);
+                pos8.setDisable(true);
+                break;
         }
     }
 
