@@ -154,10 +154,10 @@ public class Play implements Initializable {
         switch (what) {
             case "won":
                 if (whoWon.equals("X")) {
-                    matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                    matchDescription.setText("Match Description -> Winner is " + whoWon + "! 1 point to X!");
                     setPoints("X");
                 } else if (whoWon.equals("O")) {
-                    matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                    matchDescription.setText("Match Description -> Winner is " + whoWon + "! 1 point to O!");
                     setPoints("O");
                 }
 
