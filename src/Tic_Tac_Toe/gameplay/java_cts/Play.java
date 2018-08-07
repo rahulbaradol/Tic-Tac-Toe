@@ -130,6 +130,11 @@ public class Play implements Initializable {
             }
 
             showWinner_Outline("diagonal left");
+        } else if (!pos1.getText().equals("") && !pos2.getText().equals("") && !pos3.getText().equals("") && !pos4.getText().equals("") &&
+                !pos5.getText().equals("") && !pos6.getText().equals("") && !pos7.getText().equals("") && !pos8.getText().equals("") && !pos9.getText().equals("")) {
+
+            pane.setDisable(true);
+            matchDescriptor("draw", null);
         }
     }
 
@@ -145,6 +150,12 @@ public class Play implements Initializable {
 
                 turn.setText("Match Over!");
                 break;
+
+            case "draw":
+                turn.setText("Match Over!");
+                matchDescription.setText("Match Description -> Draw!");
+                break;
+
             case "match started":
                 matchDescription.setText("Match Description -> Match is going on...");
                 break;
@@ -256,6 +267,8 @@ public class Play implements Initializable {
             p7 = false;
             p8 = false;
             p9 = false;
+
+            pane.setDisable(false);
 
             pos1.setDisable(false);
             pos2.setDisable(false);
