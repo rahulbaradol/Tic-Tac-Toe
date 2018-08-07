@@ -135,18 +135,22 @@ public class Play implements Initializable {
 
     // Decides what to display match description
     private void matchDescriptor(String what, String whoWon) {
-        if (what.equals("won")) {
-            if (whoWon.equals("X")) {
-                matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
-            } else if (whoWon.equals("O")) {
-                matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
-            }
+        switch (what) {
+            case "won":
+                if (whoWon.equals("X")) {
+                    matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                } else if (whoWon.equals("O")) {
+                    matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                }
 
-            turn.setText("Match Over!");
-        } else if (what.equals("match started")) {
-            matchDescription.setText("Match Description -> Match is going on...");
-        } else if (what.equals("reset")) {
-            matchDescription.setText("Match Description -> Still not yet started.");
+                turn.setText("Match Over!");
+                break;
+            case "match started":
+                matchDescription.setText("Match Description -> Match is going on...");
+                break;
+            case "reset":
+                matchDescription.setText("Match Description -> Still not yet started.");
+                break;
         }
     }
 
