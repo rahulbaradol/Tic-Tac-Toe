@@ -159,6 +159,7 @@ public class Play implements Initializable {
             case "match started":
                 matchDescription.setText("Match Description -> Match is going on...");
                 break;
+
             case "reset":
                 matchDescription.setText("Match Description -> Still not yet started.");
                 break;
