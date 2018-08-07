@@ -166,7 +166,7 @@ public class Play implements Initializable {
 
             case "draw":
                 turn.setText("Match Over!");
-                matchDescription.setText("Match Description -> Draw!");
+                matchDescription.setText("Match Description -> No one won! It is Draw!");
                 break;
 
             case "match started":
@@ -271,7 +271,7 @@ public class Play implements Initializable {
         Alert reset = new Alert(Alert.AlertType.CONFIRMATION);
         reset.setTitle("Tic Tac Toe");
         reset.setHeaderText(null);
-        reset.setContentText("Are you sure, you want to reset everything?");
+        reset.setContentText("Are you sure, you want to reset?");
 
         ButtonType resetCurrentState = new ButtonType("Reset Current State");
         ButtonType resetEverything = new ButtonType("Reset Everything");
