@@ -1,5 +1,6 @@
 package Tic_Tac_Toe.gameplay.java_cts;
 
+import com.sun.istack.internal.Nullable;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +24,9 @@ public class Play implements Initializable {
     private Label turn, matchDescription;
 
     @FXML
+    private Label xPoint, oPoint;
+
+    @FXML
     private GridPane pane;
 
     @FXML
@@ -30,10 +34,14 @@ public class Play implements Initializable {
 
     private static boolean x, o;
     private static boolean p1, p2, p3, p4, p5, p6, p7, p8, p9;
+    private static int xPoints, oPoints;
 
     static {
         x = true;
         o = false;
+
+        xPoints = 0;
+        oPoints = 0;
 
         p1 = false;
         p2 = false;
@@ -52,6 +60,9 @@ public class Play implements Initializable {
         turn.setText(turn.getText() + " X");
         matchDescription.setText("Match Description -> Still not yet started.");
 
+        xPoint.setText("X -> " + xPoints);
+        oPoint.setText(oPoints + " <- O");
+
         FadeTransition ft = new FadeTransition(Duration.seconds(2), play);
         ft.setFromValue(0);
         ft.setToValue(1);
@@ -61,72 +72,72 @@ public class Play implements Initializable {
     // Says whose turn it is
     private void setTurn(String whoseTurn) {
         turn.setText("Turn -> " + whoseTurn);
-        matchDescriptor("match started", null);
+        matchDescriptor_And_FlowManager("match started", null);
     }
 
     // Checks whether the moves done by users has lead to the winning condition or not
     private void matchWon() {
         if ((pos1.getText().equals("X") && pos2.getText().equals("X") && pos3.getText().equals("X")) | (pos1.getText().equals("O") && pos2.getText().equals("O") && pos3.getText().equals("O"))) {
             if (pos1.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos1.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("horizontal upper");
         } else if ((pos7.getText().equals("X") && pos8.getText().equals("X") && pos9.getText().equals("X")) | (pos7.getText().equals("O") && pos8.getText().equals("O") && pos9.getText().equals("O"))) {
             if (pos7.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos7.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("horizontal lower");
         } else if ((pos3.getText().equals("X") && pos6.getText().equals("X") && pos9.getText().equals("X")) | (pos3.getText().equals("O") && pos6.getText().equals("O") && pos9.getText().equals("O"))) {
             if (pos3.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos3.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("vertical right");
         } else if ((pos1.getText().equals("X") && pos4.getText().equals("X") && pos7.getText().equals("X")) | (pos1.getText().equals("O") && pos4.getText().equals("O") && pos7.getText().equals("O"))) {
             if (pos1.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos1.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("vertical left");
         } else if ((pos2.getText().equals("X") && pos5.getText().equals("X") && pos8.getText().equals("X")) | (pos2.getText().equals("O") && pos5.getText().equals("O") && pos8.getText().equals("O"))) {
             if (pos2.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos2.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("vertical center");
         } else if ((pos4.getText().equals("X") && pos5.getText().equals("X") && pos6.getText().equals("X")) | (pos4.getText().equals("O") && pos5.getText().equals("O") && pos6.getText().equals("O"))) {
             if (pos4.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos4.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("horizontal center");
         } else if ((pos1.getText().equals("X") && pos5.getText().equals("X") && pos9.getText().equals("X")) | (pos1.getText().equals("O") && pos5.getText().equals("O") && pos9.getText().equals("O"))) {
             if (pos1.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos1.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("diagonal right");
         } else if ((pos3.getText().equals("X") && pos5.getText().equals("X") && pos7.getText().equals("X")) | (pos3.getText().equals("O") && pos5.getText().equals("O") && pos7.getText().equals("O"))) {
             if (pos3.getText().equals("X")) {
-                matchDescriptor("won", "X");
+                matchDescriptor_And_FlowManager("won", "X");
             } else if (pos3.getText().equals("O")) {
-                matchDescriptor("won", "O");
+                matchDescriptor_And_FlowManager("won", "O");
             }
 
             showWinner_Outline("diagonal left");
@@ -134,18 +145,20 @@ public class Play implements Initializable {
                 !pos5.getText().equals("") && !pos6.getText().equals("") && !pos7.getText().equals("") && !pos8.getText().equals("") && !pos9.getText().equals("")) {
 
             pane.setDisable(true);
-            matchDescriptor("draw", null);
+            matchDescriptor_And_FlowManager("draw", null);
         }
     }
 
     // Decides what to display match description
-    private void matchDescriptor(String what, String whoWon) {
+    private void matchDescriptor_And_FlowManager(String what, @Nullable String whoWon) {
         switch (what) {
             case "won":
                 if (whoWon.equals("X")) {
                     matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                    setPoints("X");
                 } else if (whoWon.equals("O")) {
                     matchDescription.setText("Match Description -> Winner is " + whoWon + "!");
+                    setPoints("O");
                 }
 
                 turn.setText("Match Over!");
@@ -242,6 +255,17 @@ public class Play implements Initializable {
         }
     }
 
+    // Set the points
+    private void setPoints(String toWhom) {
+        if (toWhom.equals("X")) {
+            xPoints++;
+            xPoint.setText("X -> " + xPoints);
+        } else if (toWhom.equals("O")) {
+            oPoints++;
+            oPoint.setText(oPoints + " <- O");
+        }
+    }
+
     // Resets everything
     public void reset() {
         Alert reset = new Alert(Alert.AlertType.CONFIRMATION);
@@ -249,15 +273,24 @@ public class Play implements Initializable {
         reset.setHeaderText(null);
         reset.setContentText("Are you sure, you want to reset everything?");
 
-        ButtonType yes = new ButtonType("Yes");
+        ButtonType resetCurrentState = new ButtonType("Reset Current State");
+        ButtonType resetEverything = new ButtonType("Reset Everything");
         ButtonType no = new ButtonType("No");
-        reset.getButtonTypes().setAll(yes, no);
+        reset.getButtonTypes().setAll(resetCurrentState, resetEverything, no);
 
         Optional<ButtonType> confirmation = reset.showAndWait();
 
-        if (confirmation.get() == yes) {
+        if ((confirmation.get() == resetCurrentState) | (confirmation.get() == resetEverything)) {
             x = true;
             o = false;
+
+            if (confirmation.get() == resetEverything) {
+                xPoints = 0;
+                oPoints = 0;
+
+                xPoint.setText("X -> " + xPoints);
+                oPoint.setText(oPoints + " <- O");
+            }
 
             p1 = false;
             p2 = false;
@@ -292,7 +325,7 @@ public class Play implements Initializable {
             pos9.setText("");
 
             setTurn("X");
-            matchDescriptor("reset", null);
+            matchDescriptor_And_FlowManager("reset", null);
         } else {
             // Nothing happens here
         }
