@@ -3,14 +3,18 @@ package Tic_Tac_Toe.gameplay.java_cts;
 import com.sun.istack.internal.Nullable;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -326,6 +330,47 @@ public class Play implements Initializable {
 
             setTurn("X");
             matchDescriptor_And_FlowManager("reset", null);
+        } else {
+            // Nothing happens here
+        }
+    }
+
+    // Takes back to Choose Mode Scene
+    public void back() {
+        Alert back = new Alert(Alert.AlertType.CONFIRMATION);
+        back.setTitle("Tic Tac Toe");
+        back.setHeaderText(null);
+        back.setContentText("Are you sure, you want to leave the game and go back?");
+
+        ButtonType yes = new ButtonType("Yes");
+        ButtonType no = new ButtonType("No");
+        back.getButtonTypes().setAll(yes, no);
+
+        Optional<ButtonType> confirmation = back.showAndWait();
+
+        if (confirmation.get() == yes) {
+            FadeTransition ft = new FadeTransition(Duration.seconds(2), play);
+            ft.setFromValue(1);
+            ft.setToValue(0);
+
+            ft.setOnFinished(event -> {
+                try {
+                    Stage stage = (Stage) play.getScene().getWindow();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/bootup_and_configuration/fxml_files/ChooseGameMode.fxml"));
+
+                    Scene sc = new Scene(loader.load());
+                    sc.getStylesheets().setAll("/Tic_Tac_Toe/stylesheets/stylesheet.css");
+
+                    stage.setTitle("Tic Tac Toe - Choose Game Mode");
+                    stage.setScene(sc);
+                    stage.setResizable(false);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+            ft.play();
         } else {
             // Nothing happens here
         }

@@ -102,6 +102,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <JFXButton layoutX="14.0" layoutY="16.0" onAction="#back" prefHeight="35.0" prefWidth="33.0" text="&lt;-" />
          </children>
       </AnchorPane>
    </children>
