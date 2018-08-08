@@ -335,7 +335,7 @@ public class Play implements Initializable {
         }
     }
 
-    // Takes back to Choose Mode Scene
+    // Takes back to Choose Game Mode Scene
     public void back() {
         Alert back = new Alert(Alert.AlertType.CONFIRMATION);
         back.setTitle("Tic Tac Toe");
