@@ -349,6 +349,8 @@ public class Play implements Initializable {
         Optional<ButtonType> confirmation = back.showAndWait();
 
         if (confirmation.get() == yes) {
+            play.setDisable(true);
+
             FadeTransition ft = new FadeTransition(Duration.seconds(2), play);
             ft.setFromValue(1);
             ft.setToValue(0);
