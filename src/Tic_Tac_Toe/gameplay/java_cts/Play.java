@@ -264,9 +264,25 @@ public class Play implements Initializable {
         if (toWhom.equals("X")) {
             xPoints++;
             xPoint.setText("X -> " + xPoints);
+
+            if (xPoints == 10) {
+                Alert gift = new Alert(Alert.AlertType.INFORMATION);
+                gift.setTitle("Tic Tac Toe");
+                gift.setHeaderText(null);
+                gift.setContentText("Congratulations X! You have reached 10 points!!\nNow you can continue playing if you want!!");
+                gift.showAndWait();
+            }
         } else if (toWhom.equals("O")) {
             oPoints++;
             oPoint.setText(oPoints + " <- O");
+
+            if (oPoints == 10) {
+                Alert gift = new Alert(Alert.AlertType.INFORMATION);
+                gift.setTitle("Tic Tac Toe");
+                gift.setHeaderText(null);
+                gift.setContentText("Congratulations O! You have reached 10 points!!\nNow you can continue playing if you want!!");
+                gift.showAndWait();
+            }
         }
     }
 
