@@ -59,7 +59,30 @@ public class ChooseGameMode implements Initializable {
 
             ft.play();
         } else if (!normalMode.isSelected() && customisedMode.isSelected()) {
-            System.out.println("Yeah!!");
+            chooseMode.setDisable(true);
+
+            FadeTransition ft = new FadeTransition(Duration.seconds(2), chooseMode);
+            ft.setFromValue(1);
+            ft.setToValue(0);
+
+            ft.setOnFinished(event -> {
+                try {
+                    Stage stage = (Stage) chooseMode.getScene().getWindow();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/gameplay/fxml_files/Play_CustomisedMode.fxml"));
+
+                    Scene sc = new Scene(loader.load());
+                    sc.getStylesheets().setAll("/Tic_Tac_Toe/stylesheets/stylesheet.css");
+
+                    stage.setTitle("Tic Tac Toe - Customised Mode");
+                    stage.setScene(sc);
+                    stage.setResizable(false);
+                    stage.show();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            });
+
+            ft.play();
         }
     }
 
