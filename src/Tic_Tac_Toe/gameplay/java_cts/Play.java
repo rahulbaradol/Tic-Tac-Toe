@@ -374,7 +374,7 @@ public class Play implements Initializable {
             ft.setOnFinished(event -> {
                 try {
                     Stage stage = (Stage) play.getScene().getWindow();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/bootup_and_configuration/fxml_files/ChooseGameMode.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/bootup_and_configuration/fxml_files/Menu.fxml"));
 
                     Scene sc = new Scene(loader.load());
                     sc.getStylesheets().setAll("/Tic_Tac_Toe/stylesheets/stylesheet.css");
