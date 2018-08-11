@@ -432,7 +432,7 @@ public class Play implements Initializable {
                     Scene sc = new Scene(loader.load());
                     sc.getStylesheets().setAll("/Tic_Tac_Toe/stylesheets/stylesheet.css");
 
-                    stage.setTitle("Tic Tac Toe - Choose Game Mode");
+                    stage.setTitle("Tic Tac Toe - Menu");
                     stage.setScene(sc);
                     stage.setResizable(false);
                     stage.show();
