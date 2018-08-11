@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -283,6 +284,58 @@ public class Play implements Initializable {
                 gift.setContentText("Congratulations O! You have reached 10 points!!\nNow you can continue playing if you want!!");
                 gift.showAndWait();
             }
+        }
+    }
+
+    // Shows the Board Status (or loads BoardStatus.fxml file)
+    public void showBoardStatus() {
+        try {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/gameplay/fxml_files/BoardStatus.fxml"));
+            Scene sc = new Scene(loader.load());
+
+            stage.setTitle("Tic Tac Toe - Board Status");
+            stage.setScene(sc);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Allows to use the keyboard for easy use of quick toggles or buttons available on the board
+    public void keyBoard_Functioning(KeyEvent keyEvent) {
+        switch (keyEvent.getCode()) {
+            case R:
+                reset();
+                break;
+
+            case B:
+                showBoardStatus();
+                break;
+
+            case BACK_SPACE:
+                back();
+                break;
+
+            case ESCAPE:
+                Alert exit = new Alert(Alert.AlertType.CONFIRMATION);
+                exit.setTitle("Tic Tac Toe");
+                exit.setHeaderText(null);
+                exit.setContentText("Are you sure, you want to exit?");
+
+                ButtonType yes = new ButtonType("Yes");
+                ButtonType no = new ButtonType("No");
+                exit.getButtonTypes().setAll(yes, no);
+
+                Optional<ButtonType> confirmation = exit.showAndWait();
+
+                if (confirmation.get() == yes) {
+                    System.exit(0);
+                } else {
+                    // Nothing happens here
+                }
+                break;
         }
     }
 
@@ -618,5 +671,4 @@ public class Play implements Initializable {
             p9 = true;
         }
     }
-
 }

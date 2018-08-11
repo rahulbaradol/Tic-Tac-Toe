@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="play" prefHeight="540.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="540.0" prefWidth="600.0">
+            <children>
+                <Separator layoutX="110.0" layoutY="249.0" prefHeight="3.0" prefWidth="381.0" />
+                <Label layoutX="236.0" layoutY="14.0" text="Tic Tac Toe" underline="true">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="112.0" layoutY="164.0" prefHeight="0.0" prefWidth="381.0" />
+                <Separator layoutX="358.0" layoutY="83.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="6.0" />
+                <Separator layoutX="233.0" layoutY="83.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="0.0" />
+                <Label layoutX="14.0" layoutY="450.0" text="Turn -&gt;">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="485.0" text="Match Description -&gt;">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="397.0" text="X -&gt;">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" layoutX="510.0" layoutY="397.0" prefHeight="35.0" prefWidth="69.0" text="&lt;- O">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            <Label layoutX="14.0" layoutY="23.0" text="&lt;-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="565.0" layoutY="23.0" text="R">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="17.0" text="Allows you to stop the game" />
+            <Label layoutX="44.0" layoutY="33.0" text="and go back!" />
+            <Label layoutX="422.0" layoutY="17.0" text="Allows you to reset!!" />
+            <Label layoutX="422.0" layoutY="33.0" text="It asks what to reset." />
+            <Label layoutX="160.0" layoutY="405.0" text="&lt;- Here the points of each player is shown -&gt;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="83.0" prefHeight="20.0" prefWidth="152.0" text="Here the players place their" />
+            <Label layoutX="11.0" layoutY="100.0" text="related characters and play the game!!" />
+            <Label layoutX="13.0" layoutY="117.0" text="-&gt;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="113.0" layoutY="458.0" text="&lt;- Here it shows whose turn it is to play">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="493.0" text="&lt;- Here it shows status of the match">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

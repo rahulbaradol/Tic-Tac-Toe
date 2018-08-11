@@ -62,7 +62,30 @@ public class Menu implements Initializable {
 
     // Loads the scene which says about itself
     public void about() {
+        menu.setDisable(true);
 
+        FadeTransition ft = new FadeTransition(Duration.seconds(2), menu);
+        ft.setFromValue(1);
+        ft.setToValue(0);
+
+        ft.setOnFinished(event -> {
+            try {
+                Stage stage = (Stage) menu.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tic_Tac_Toe/bootup_and_configuration/fxml_files/About.fxml"));
+
+                Scene sc = new Scene(loader.load());
+                sc.getStylesheets().setAll("/Tic_Tac_Toe/stylesheets/stylesheet.css");
+
+                stage.setTitle("Tic Tac Toe - About");
+                stage.setScene(sc);
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        ft.play();
     }
 
     // Allows to use the keyboard for the functions to perform
