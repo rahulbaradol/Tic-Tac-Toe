@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="about" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.bootup_and_configuration.java_cts.About">
    <children>
       <AnchorPane onKeyPressed="#keyBoard_Functioning" prefHeight="400.0" prefWidth="600.0">
@@ -16,32 +15,32 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="75.0" text="Wanna play Tic Tac Toe in your computer with your friends? Well, this is the ">
+            <Label layoutX="14.0" layoutY="105.0" text="Wanna play Tic Tac Toe in your computer with your friends? Well, this is the ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="100.0" text="game for you!! As you know, X and O, both fighting to get the victory!! And">
+            <Label layoutX="14.0" layoutY="130.0" text="game for you!! As you know, X and O, both fighting to get the victory!! And">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="125.0" text="at last, we will get the results!! Tic Tac Toe game is the Rahul Baradol's first ">
+            <Label layoutX="14.0" layoutY="155.0" text="at last, we will get the results!! Tic Tac Toe game is the Rahul Baradol's first ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="150.0" text="game, and it is FREE!!">
+            <Label layoutX="14.0" layoutY="180.0" text="game ever created, and it is FREE!!">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="484.0" layoutY="200.0" text="Copyright (C)">
+            <Label layoutX="484.0" layoutY="230.0" text="Copyright (C)">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="200.0" text="Updates will be coming!!">
+            <Label layoutX="14.0" layoutY="230.0" text="Updates will be coming!!">
                <font>
                   <Font size="16.0" />
                </font>
@@ -61,6 +60,11 @@
                   <Font size="14.0" />
                </font>
             </JFXButton>
+            <Label layoutX="14.0" layoutY="65.0" text="Version 1.0" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
